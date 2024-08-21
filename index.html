@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BilliJi &mdash; Generate animated emotes from static images</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bright.css">
+  </head>
+  <body>
+    <h1>emoteJAM</h1>
+
+    <p>Welcome to BilliJi custom made for billu ji &mdash; a simple website that generates animated <a href="https://betterttv.com/">BTTV</a> emotes from static images. Let's get started!</p>
+
+    <h2>1. Select an Image</h2>
+
+    <p>112x112 static images are prefered but you can try to select any image and see what happens. This does not upload the image anywhere. emoteJAM works entirely in your browser without any server behind it.</p>
+
+    <div id="image-selector-entry"></div>
+
+    <p>After you selected the image move on the next section to select a Filter!</p>
+
+    <h2>2. Select a Filter</h2>
+    <p>The image below is not a GIF yet. It's just a preview of how the filter looks like when applied to the image you've selected. Try different filters and pick the one you want.</p>
+
+    <div id="filter-selector-entry"></div>
+
+    <p>Bright green color is going to be transparent when the actual final GIF is rendered. There is no way to change that yet (but we are working on it). If your image contains that color I'm deeply sorry!</p>
+
+    <p>Let's render your GIF now.</p>
+
+    <h2>3. Render the GIF</h2>
+    <p>Click "Render" and when the rendering process is done you can just Right Click the final image and Save it as a GIF that you can then upload to <a href="https://betterttv.com/">BTTV</a>.</p>
+    <div class="widget">
+      <div class="widget-element progress-bar"><div class="progress" id="render-progress"></div></div>
+      <div class="widget-element"><input id="render" type="submit" value="Render" /></div>
+      <div class="widget-element">
+        <div id="render-spinner" class="spinning-wheel" style="display: none"></div>
+      </div>
+      <img id="render-preview" class="widget-element" />
+      <div class="widget-element"><a id="render-download" style="display: none; border: none;"><input type="submit" value="Download" /></a></div>
+      <p>By clicking "Render" you confirm that you have all of the necessary permissions from the respective copyright holders to process this image. Since all of the image processing/generation is done on your machine BilliJi developers disclaim all the responsibility for any copyright violations done using this website.</p>
+      <p>Feel free to scroll back and start over. Have fun!</p>
+    </div>
+
+    <!-- NOTE: we didn't move gif.js to js because it expects gif.worker.js to be available at `/` resource -->
+    <script src="gif.js"></script>
+    <script src="js/grecha.js"></script>
+    <script src="js/eval.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
